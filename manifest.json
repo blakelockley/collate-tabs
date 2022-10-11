@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Collate Tabs",
+    "description": "Reorder tabs so tabs of the same domain are together.",
+    "version": "0.1",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
+  }
