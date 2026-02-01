@@ -1,6 +1,42 @@
 <html>
-  <body>
-    <div style="width: min-content; white-space: nowrap; font-size: 16px;">Huey was here</div>
-    <script src="popup.js"></script>
-  </body>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet">
+
+  <style>
+    .manufacturing-consent-regular {
+      font-family: "Manufacturing Consent", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .btn {
+      padding: 4px 8px;
+      background: white;
+      border-radius: 4px;
+      border-width: 1px;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background: #f8f8f8;
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div style="width: 280px; white-space: nowrap; display: flex; flex-direction: column; align-items: center;">
+    <div class="manufacturing-consent-regular" style="font-size: 32px;">Collate Tabs</div>
+    <div style="margin-bottom: 16px;">All tabs have been reordered by domain</div>
+    <button id="btn-bubble-audible" class="btn">
+      Bubble audible tabs
+    </button>
+  </div>
+  <script src="./popup.js"></script>
+</body>
+
 </html>

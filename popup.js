@@ -32,9 +32,24 @@ async function moveTabsToIndex(tabs) {
         await chrome.tabs.move(tab.id, { index });
 }
 
+async function bubbleaudibleTabs() {
+    const tabs = await getAllTabs();
+
+    let audibleTabs = []
+    for (const [index, tab] of tabs.entries())
+        if (tab.audible)
+            audibleTabs.push(tab)
+        
+    for (const [index, tab] of audibleTabs.entries())
+        await chrome.tabs.move(tab.id, { index: tabs.length });
+
+}
+
 (async () => {
     const tabs = await getAllTabs();
     const orderedTabs = orderTabsByDomain(tabs);
     
     await moveTabsToIndex(orderedTabs);
+
+    document.getElementById("btn-bubble-audible").addEventListener("click", bubbleaudibleTabs);
 })();
